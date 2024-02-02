@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>{{room.name}}</h1>
+<spa>{{ room.description }}</spa>
+{% for comment in comments %}
+<hr>
+<small>{{ comment.user }}</small><br><br>
+<span>{{ comment.body }}</span><br><br>
+<small>Last updated: {{ comment.update_at }}</small>
+{% endfor %}
+{% endblock %}
