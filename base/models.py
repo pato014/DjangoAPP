@@ -16,8 +16,18 @@ class Room(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-update_at', 'create_at']
     def __str__(self):
         return self.name
+
+    @property
+    def create_year(self):
+        return self.create_at.year
+
+    @property
+    def create_time(self):
+        return self.create_at.time
 
 
 class Comments(models.Model):

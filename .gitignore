@@ -1,2 +1,7 @@
 *env
 *migrations
+db.sqlite3
+*.idea
+*__pycache__
+*base/__pycache__
+.gitignore
