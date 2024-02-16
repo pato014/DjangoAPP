@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    <p>Completed: {% if task.completed %}YES{% else %}No{% endif %}</p>
+    <a href="{% url 'task_update' task.pk %}">Edit Task</a>
+    <a href="{% url 'task_delete' task.pk %}">Delete Task</a>
+{% endblock %}
